@@ -1,0 +1,17 @@
+---
+layout: layout/html.njk
+scopedClass: lesson-02
+---
+
+{% include lessons/2.njk %}
+
+
+
+<div x-data="{count: 0}">
+  <button class="button is-small" @click="count--">-1</button>
+  <button class="button is-small" @click="count++">+1</button>
+  <div class="notification is-info is-light">
+    <p>The current count is <strong x-text="count"></strong></p>
+  </div>
+  <button @click="count = 0">reset</button>
+</div>

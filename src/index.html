@@ -1,0 +1,20 @@
+---
+layout: layout/html.njk
+---
+
+<style>
+  .active { background: lightpink; }
+</style>
+
+<div x-data="{activeTab: 0}">
+  <div>
+    <button @click="activeTab = 0" :class="{'active': activeTab === 0}">Tab 1</button>
+    <button @click="activeTab = 1" :class="{'active': activeTab === 1}">Tab 2</button>
+    <button @click="activeTab = 2" :class="{'active': activeTab === 2}">Tab 3</button>
+  </div>
+  <div>
+    <div x-show="activeTab === 0">Content 1: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus libero assumenda aperiam officiis architecto natus id cum! Minus labore perferendis exercitationem consectetur amet et, illo sit qui, quos quasi perspiciatis!</div>
+    <div x-show="activeTab === 1">Content 2: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus libero assumenda aperiam officiis architecto natus id cum! Minus labore perferendis exercitationem consectetur amet et, illo sit qui, quos quasi perspiciatis!</div>
+    <div x-show="activeTab === 2">Content 3: Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus libero assumenda aperiam officiis architecto natus id cum! Minus labore perferendis exercitationem consectetur amet et, illo sit qui, quos quasi perspiciatis!</div>
+  </div>
+</div>

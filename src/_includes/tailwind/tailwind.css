@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+button {
+  @apply bg-indigo-500 text-white shadow rounded px-4 py-1;
+}
+button:focus {
+  @apply outline-none shadow-outline;
+}
+
+/* Lesson 1 */
+.lesson-01 strong {
+  @apply text-3xl font-black;
+}
