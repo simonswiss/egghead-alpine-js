@@ -2,6 +2,11 @@
 @tailwind utilities;
 @tailwind components;
 
+[x-cloak] {
+  display: none;
+}
+
+/* Buttons */
 button {
   @apply bg-indigo-500 text-white shadow rounded px-4 py-1;
 }
@@ -9,7 +14,99 @@ button:focus {
   @apply outline-none shadow-outline;
 }
 
+button:hover {
+  @apply bg-indigo-600;
+}
+button:active {
+  @apply bg-indigo-500;
+}
+
+/* inputs */
+input {
+  @apply bg-gray-100 rounded border border-gray-300 h-10 px-4;
+}
+
+input:focus {
+  @apply outline-none shadow-outline;
+}
+
+label {
+  @apply block uppercase text-gray-600 text-xs tracking-wide mb-1;
+}
+
+pre {
+  @apply bg-gray-100 text-gray-800 py-2 px-4 text-sm rounded;
+}
+
 /* Lesson 1 */
 .lesson-01 strong {
   @apply text-3xl font-black;
+}
+.lesson-01 p {
+  @apply mb-3;
+}
+
+/* Lesson 2 */
+.lesson-02 button.active {
+  @apply bg-pink-500;
+}
+.lesson-02 p {
+  @apply mt-6;
+}
+
+/* Lesson 5 */
+.lesson-05 p,
+.lesson-05 button {
+  @apply mt-4;
+}
+
+/* Lesson 8 */
+.lesson-08 h1 {
+  @apply text-3xl leading-tight mb-6;
+}
+.lesson-08 ul {
+  @apply flex flex-wrap;
+}
+.lesson-08 li {
+  @apply m-2;
+}
+.lesson-08 img {
+  @apply w-56 h-56 object-cover rounded shadow-xl transition-transform duration-75;
+}
+.lesson-08 input {
+  @apply mb-6;
+}
+.lesson-08 .error {
+  @apply bg-red-100 border border-red-200 py-3 px-6 rounded;
+}
+.lesson-08 .prompt {
+  @apply bg-blue-100 border border-blue-200 py-3 px-6 rounded;
+}
+
+.spinner {
+  @apply w-12 h-12 bg-gray-300 rounded-full;
+  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+  animation: sk-scaleout 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
 }

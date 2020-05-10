@@ -1,0 +1,29 @@
+<div x-data="tabs()">
+  <div>
+
+    <template x-for="tab in tabs" :key="tab.id">
+      <button @click="activeTab = tab.id" x-text="tab.title" :class="{'active': getActiveStatus(tab.id)}"></button>
+    </template>
+  </div>
+  <div>
+    <template x-for="tab in tabs" :key="tab.id">
+      <div x-show="getActiveStatus(tab.id)">
+        <p x-text="tab.text"></p>
+      </div>
+    </template>
+  </div>
+</div>
+
+<script>
+  function tabs() {
+    return {
+      activeTab: 0,
+      tabs: [
+        {id: 0, title: "Tab 1", text: "I am the content of tab number one, and I think I just won! 🏆"},
+        {id: 1, title: "Tab 2", text: "Heya! I root for number two, and so should you! ❤️"},
+        {id: 2, title: "Tab 3", text: "Haha nice one, but I am number three, and now it's all about me! 😎"},
+      ],
+      getActiveStatus(id) { return this.activeTab === id }
+    }
+  }
+</script>

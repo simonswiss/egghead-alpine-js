@@ -1,0 +1,58 @@
+<div x-data="dogFetcher()" x-init="init">
+  
+  <!-- Search field -->
+  <label>What breed?</label>
+  <input type="text" x-model.debounce.500="breed">
+
+  <!-- API error -->
+  <template x-if="fetchStatus === 'error'">
+    <p class="error">There was something wrong with the API call, please try again.</p>
+  </template>
+
+  <!-- Empty search field value -->
+  <p x-show="!breed" class="prompt">Let's go fetch some pups!</p>
+
+  <!-- Fetching dog breed -->
+  <div x-show="fetchStatus === 'loading'" class="spinner"></div>
+
+  <template x-if="breed && fetchStatus === 'idle'">
+    <div>
+      <!-- Failed search -->
+      <template x-if="data.status === 'error'">
+        <p class="error" x-text="data.message"></p>
+      </template>  
+
+      <!-- Puppy pic!! -->
+      <template x-if="data.status === 'success'">
+        <img :src="data.message" alt="cute pup" />
+      </template>
+    </div>  
+  </template>
+</div>
+
+<script>
+  function dogFetcher() {
+    return {
+      breed: 'corgi',
+      fetchStatus: 'loading',
+      data: null,
+      init() {
+        this.$watch('breed', () => this.fetchDogs())
+      },
+      fetchDogs() {
+        this.fetchStatus = 'loading',
+        fetch(`https://dog.ceo/api/breed/${this.breed}/images/random`)
+          .then(res => {
+            if (!res.ok) {
+              this.fetchStatus = 'error'
+            }
+            return res.json()
+          })
+          .then(data => {
+            this.fetchStatus = 'idle'
+            this.data = data
+          });
+      }
+    }
+  }
+</script>

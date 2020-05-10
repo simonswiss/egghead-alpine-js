@@ -1,0 +1,5 @@
+<div x-data="{name: ''}" x-init="$refs.nameInput.focus()">
+  <label>Your name</label>
+  <input x-ref="nameInput" type="text" x-model="name">
+  <p>Hi, my name is <span x-text="name || '_______________'"></span>! 👋</p>
+</div>

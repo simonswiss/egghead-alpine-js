@@ -1,5 +1,6 @@
-<div>
-  <button>-1</button>
-  <button>+1</button>
-  <p>The current count is <strong>0</strong>.</p>
+<div x-data="{count: 0}">
+  <button @click="count--">-1</button>
+  <button @click="count++">+1</button>
+  <p>The current count is <strong x-text="count"></strong>.</p> 
+  <button @click="count = 0">reset</button>
 </div>

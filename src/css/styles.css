@@ -19042,6 +19042,12 @@ video {
   }
 }
 
+[x-cloak] {
+  display: none;
+}
+
+/* Buttons */
+
 button {
   --bg-opacity: 1;
   background-color: #667eea;
@@ -19062,11 +19068,188 @@ button:focus {
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
+button:hover {
+  --bg-opacity: 1;
+  background-color: #5a67d8;
+  background-color: rgba(90, 103, 216, var(--bg-opacity));
+}
+
+button:active {
+  --bg-opacity: 1;
+  background-color: #667eea;
+  background-color: rgba(102, 126, 234, var(--bg-opacity));
+}
+
+/* inputs */
+
+input {
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+  border-radius: 0.25rem;
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #e2e8f0;
+  border-color: rgba(226, 232, 240, var(--border-opacity));
+  height: 2.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+input:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+label {
+  display: block;
+  text-transform: uppercase;
+  --text-opacity: 1;
+  color: #718096;
+  color: rgba(113, 128, 150, var(--text-opacity));
+  font-size: 0.75rem;
+  letter-spacing: 0.025em;
+  margin-bottom: 0.25rem;
+}
+
+pre {
+  --bg-opacity: 1;
+  background-color: #f7fafc;
+  background-color: rgba(247, 250, 252, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #2d3748;
+  color: rgba(45, 55, 72, var(--text-opacity));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+}
+
 /* Lesson 1 */
 
 .lesson-01 strong {
   font-size: 1.875rem;
   font-weight: 900;
+}
+
+.lesson-01 p {
+  margin-bottom: 0.75rem;
+}
+
+/* Lesson 2 */
+
+.lesson-02 button.active {
+  --bg-opacity: 1;
+  background-color: #ed64a6;
+  background-color: rgba(237, 100, 166, var(--bg-opacity));
+}
+
+.lesson-02 p {
+  margin-top: 1.5rem;
+}
+
+/* Lesson 5 */
+
+.lesson-05 p,
+.lesson-05 button {
+  margin-top: 1rem;
+}
+
+/* Lesson 8 */
+
+.lesson-08 h1 {
+  font-size: 1.875rem;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.lesson-08 ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lesson-08 li {
+  margin: 0.5rem;
+}
+
+.lesson-08 img {
+  width: 14rem;
+  height: 14rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition-property: transform;
+  transition-duration: 75ms;
+}
+
+.lesson-08 input {
+  margin-bottom: 1.5rem;
+}
+
+.lesson-08 .error {
+  --bg-opacity: 1;
+  background-color: #fff5f5;
+  background-color: rgba(255, 245, 245, var(--bg-opacity));
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #fed7d7;
+  border-color: rgba(254, 215, 215, var(--border-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0.25rem;
+}
+
+.lesson-08 .prompt {
+  --bg-opacity: 1;
+  background-color: #ebf8ff;
+  background-color: rgba(235, 248, 255, var(--bg-opacity));
+  border-width: 1px;
+  --border-opacity: 1;
+  border-color: #bee3f8;
+  border-color: rgba(190, 227, 248, var(--border-opacity));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 0.25rem;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  --bg-opacity: 1;
+  background-color: #e2e8f0;
+  background-color: rgba(226, 232, 240, var(--bg-opacity));
+  border-radius: 9999px;
+  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+  animation: sk-scaleout 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
 }
 
 @media (min-width: 640px) {

@@ -1,0 +1,11 @@
+---
+layout: layout/html.njk
+---
+
+<nav>
+  <ul>
+    {% for index in range(1, 9) %}
+      <li><a href="/lessons/{{ index }}">Lesson {{ index }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>

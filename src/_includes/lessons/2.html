@@ -1,1 +1,12 @@
-<p>hooooo</p>
+<div x-data="{activeTab: 0}">
+  <div>
+    <button @click="activeTab = 0" :class="{'active': activeTab === 0}">Tab 1</button>
+    <button @click="activeTab = 1" :class="{'active': activeTab === 1}">Tab 2</button>
+    <button @click="activeTab = 2" :class="{'active': activeTab === 2}">Tab 3</button>
+  </div>
+  <div>
+    <div x-show="activeTab === 0"><p>I am the content of tab number one, and I think I just won! 🏆</p></div>
+    <div x-show="activeTab === 1"><p>Heya! I root for number two, and so should you! ❤️</p></div>
+    <div x-show="activeTab === 2"><p>Haha nice one, but I am number three, and now it's all about me! 😎</p></div>
+  </div>
+</div>
