@@ -1,6 +1,5 @@
 <div x-data="tabs()">
   <div>
-
     <template x-for="tab in tabs" :key="tab.id">
       <button @click="activeTab = tab.id" x-text="tab.title" :class="{'active': getActiveStatus(tab.id)}"></button>
     </template>

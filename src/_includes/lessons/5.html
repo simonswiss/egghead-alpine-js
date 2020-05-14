@@ -1,5 +1,5 @@
 <div x-data="{name: ''}">
   <label>Your name</label>
-  <input type="text" x-model="name">
+  <input type="text" :value="name" @input="name = $event.target.value">
   <p>Hi, my name is <span x-text="name || '_______________'"></span>! 👋</p>
 </div>

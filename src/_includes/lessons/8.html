@@ -2,7 +2,7 @@
   
   <!-- Search field -->
   <label>What breed?</label>
-  <input type="text" x-model.debounce.500="breed">
+  <input type="text" x-model.debounce.750="breed">
 
   <!-- API error -->
   <template x-if="fetchStatus === 'error'">
@@ -37,7 +37,10 @@
       fetchStatus: 'loading',
       data: null,
       init() {
-        this.$watch('breed', () => this.fetchDogs())
+        this.$watch('breed', () => {
+          this.fetchDogs();
+        });
+        this.fetchDogs();
       },
       fetchDogs() {
         this.fetchStatus = 'loading',
@@ -51,7 +54,11 @@
           .then(data => {
             this.fetchStatus = 'idle'
             this.data = data
-          });
+          })
+          .catch(error => {
+            this.fetchStatus = 'error'
+            console.log({ error })
+          })
       }
     }
   }
