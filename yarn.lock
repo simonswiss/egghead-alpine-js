@@ -2232,9 +2232,9 @@ lru-cache@^4.1.5:
     yallist "^2.1.2"
 
 luxon@^1.21.3:
-  version "1.24.1"
-  resolved "https://packages.atlassian.com/api/npm/npm-remote/luxon/-/luxon-1.24.1.tgz#a8383266131ed4eaed4b5f430f96f3695403a52a"
-  integrity sha1-qDgyZhMe1OrtS19DD5bzaVQDpSo=
+  version "1.28.1"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-1.28.1.tgz#528cdf3624a54506d710290a2341aa8e6e6c61b0"
+  integrity sha512-gYHAa180mKrNIUJCbwpmD0aTu9kV0dREDrwNnuyFAsO1Wt0EVYSZelPnJlbj9HplzXX/YWXHFTL45kvZ53M0pw==
 
 map-cache@^0.2.0, map-cache@^0.2.2:
   version "0.2.2"
